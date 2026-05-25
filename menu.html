@@ -22,25 +22,29 @@
             <a class="menu__link" href="#" target="_top">CURSOS</a>
             <ul class="dropdown__menu" aria-label="Lista de cursos">
               <li>
-                <a class="dropdown__link" href="ads.html" target="_top">Análise e Desenvolvimento de Sistemas</a>
+                <a class="dropdown__link" href="ads.html" target="_top"
+                  >Análise e Desenvolvimento de Sistemas</a
+                >
               </li>
               <li>
-                <a class="dropdown__link" href="gestao-publica.html" target="_top">Gestão Pública</a>
+                <a class="dropdown__link" href="engenharia-producao.html" target="_top"
+                  >Engenharia de Produção</a
+                >
               </li>
               <li>
-                <a class="dropdown__link" href="gestao-ti.html" target="_top">Gestão de TI</a>
+                <a class="dropdown__link" href="gestao-ti.html" target="_top"
+                  >Gestão em TI</a
+                >
               </li>
               <li>
                 <a class="dropdown__link" href="letras.html" target="_top">Letras</a>
               </li>
               <li>
-                <a class="dropdown__link" href="engenharia-producao.html" target="_top">Engenharia de Produção</a>
+                <a class="dropdown__link" href="gestao-publica.html" target="_top"
+                  >Gestão Pública</a
+                >
               </li>
             </ul>
-          </li>
-
-          <li class="menu__item">
-            <a class="menu__link" href="sobre.html" target="_top">SOBRE</a>
           </li>
 
           <li class="menu__item">
@@ -50,8 +54,40 @@
           <li class="menu__item">
             <a class="menu__link" href="entrar.html" target="_top">ENTRAR</a>
           </li>
+
+          <li class="menu__item" style="margin-left: auto">
+            <a class="menu__link" href="sobre.html" target="_top">SOBRE</a>
+          </li>
         </ul>
       </nav>
+      <div class="headerBrand">
+        <img
+          src="Logo%20(1).jpg"
+          alt="Instituto Federal São Paulo"
+          class="headerBrand__logo"
+        />
+      </div>
     </header>
+
+    <script>
+      // Marca item ativo olhando a URL da página "pai"
+      (function () {
+        try {
+          var path =
+            window.top && window.top.location && window.top.location.pathname
+              ? window.top.location.pathname
+              : window.location.pathname;
+          var page = path.split("/").pop() || "index.html";
+          var links = document.querySelectorAll(".menu__link");
+          links.forEach(function (a) {
+            var href = a.getAttribute("href");
+            if (!href || href === "#") return;
+            if (href === page || (page === "" && href === "index.html")) {
+              a.classList.add("is-active");
+            }
+          });
+        } catch (e) {}
+      })();
+    </script>
   </body>
 </html>
