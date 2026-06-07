@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/* Custom styles for formularios.css to match the mockup */
+.form-check-input {
+  cursor: pointer;
+}
+
+.form-check-label {
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #0056b3 !important;
+  border-color: #004085 !important;
+}
